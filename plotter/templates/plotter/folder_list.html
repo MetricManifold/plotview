@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'plotter/style.css' %}">
+
+{% for folder in folders %}
+<div>
+    <h2>{{ folder.name }}</h2>
+    <button onclick="location.href='{% url 'generate_picture' folder.id %}'">Plot</button>
+    {% if folder.picture %}
+    <details>
+        <summary>
+            <span class="icon">\/</span>
+        </summary>
+        <img src="{% static folder.picture ".png" %}" alt="{{ folder.name }} Picture">
+    </details>
+    {% endif %}
+</div>
+{% endfor %}

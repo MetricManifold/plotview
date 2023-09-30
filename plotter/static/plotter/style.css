@@ -1,0 +1,25 @@
+details {
+    user-select: none;
+}
+  
+details > summary span.icon {
+    transition: all 0.3s;
+}
+
+details[open] summary span.icon {
+    transform: rotate(180deg);
+}
+
+summary {
+    display: flex;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+body {
+    background-color: rgb(236, 151, 151);
+}
+
